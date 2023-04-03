@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.listcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-group{
+  border: 2px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px 10px 10px 10px;
+  font-size: large;
+  overflow-y: scroll;
+  /* border-radius: 10px; */
+  border-width: 15px;
+  width: 650px;
+  font-family: 'Lato', sans-serif; 
+}
+
+.list-group li{
+  width: 650px;
+  font-weight: 400;
+  /* border-radius: 50px; */
+  /* border-color:#0051ff */
+}
+
+.list-group span{
+  
+  align-self: center;
+  font-size: 30px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(rgb(206, 0, 137), rgb(3, 0, 182));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body{
+  background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?w=740&t=st=1680508624~exp=1680509224~hmac=73e3c658aa25632538c57480d20b1bfa93edd39847dc091ff22d3174c429d8ee");
+  /* background-image: linear-gradient(90deg , #d123fc70 , rgba(0, 4, 255, 0.705)); */
+}
+
+.container-fluid{
+  padding: 0px 0px 0px 0px ;
+}
