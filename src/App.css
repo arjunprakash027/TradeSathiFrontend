@@ -1,3 +1,6 @@
+/* Testimonials  */
+
+
 .App {
   text-align: center;
 }
@@ -75,10 +78,18 @@
 }
 
 body{
-  background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?w=740&t=st=1680508624~exp=1680509224~hmac=73e3c658aa25632538c57480d20b1bfa93edd39847dc091ff22d3174c429d8ee");
-  /* background-image: linear-gradient(90deg , #d123fc70 , rgba(0, 4, 255, 0.705)); */
+  /* background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?w=740&t=st=1680508624~exp=1680509224~hmac=73e3c658aa25632538c57480d20b1bfa93edd39847dc091ff22d3174c429d8ee"); */
+  background-image: linear-gradient(90deg , #f7d1ff70 , rgba(232, 255, 169, 0.705));
 }
 
 .container-fluid{
   padding: 0px 0px 0px 0px ;
+}
+
+
+
+
+
+.card {
+  border-radius: .7rem;
 }

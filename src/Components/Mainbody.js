@@ -1,63 +1,99 @@
 import React from 'react'
 import { useState } from 'react';
 
+
 export default function Mainbody() {
   const [pt7, setpt7] = useState([]);
+  const [per2, setper2] = useState([]);
+  const [vwap, setvwap] = useState([]);
+  const [rsi30, setrsi30] = useState([]);
+  const [rsi70, setrsi70] = useState([]);
 
   setInterval(() => {
-    let zx = fetch("http://lakshyakum.pythonanywhere.com/getinfo")
-    zx.then(res =>
+    let za = fetch("http://kumrawatyogesh.pythonanywhere.com/getsuddenpt7")
+    za.then(res =>
       res.json()).then(d => {
-        // console.log(d)
-        let suddenpt7 = d.suddenpt7.split("#")
-        let sudden2per = d.suddenpt7.split("#")
-        let rsi30 = d.rsi30.split("#")
-        let rsi70 = d.rsi70.split("#")
-        let vwap = d.vwap.split("#")
-        // suddenpt7.forEach(element => {
-        //   setpt7([
-        //     pt7.push(element)
-        //   ]);
-        // });   
-        setpt7(suddenpt7)
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setpt7(varia)
+      })
+    let zb = fetch("http://kumrawatyogesh.pythonanywhere.com/getsudden2per")
+    zb.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setper2(varia)
+      })
+    let zc = fetch("http://kumrawatyogesh.pythonanywhere.com/getvwap")
+    zc.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setvwap(varia)
+      })
+    let zd = fetch("http://kumrawatyogesh.pythonanywhere.com/getrsi30")
+    zd.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setrsi30(varia)
+      })
+    let ze = fetch("http://kumrawatyogesh.pythonanywhere.com/getrsi70")
+    ze.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setrsi70(varia)
       })
   }, 60000);
 
-  let zx = fetch("http://lakshyakum.pythonanywhere.com/getinfo")
-  zx.then(res =>
-    res.json()).then(d => {
-      // console.log(d)
-      let suddenpt7 = d.suddenpt7.split("#")
-      let sudden2per = d.suddenpt7.split("#")
-      let rsi30 = d.rsi30.split("#")
-      let rsi70 = d.rsi70.split("#")
-      let vwap = d.vwap.split("#")
-      // suddenpt7.forEach(element => {
-      //   setpt7([
-      //     pt7.push(element)
-      //   ]);
-      // });   
-      setpt7(suddenpt7)
-    })
-
-  // let zx = fetch("http://lakshyakum.pythonanywhere.com/getinfo")
-  // zx.then(res =>
-  //   res.json()).then(d => {
-  //     // console.log(d)
-  //     let suddenpt7 = d.suddenpt7.split("#")
-  //     let sudden2per = d.suddenpt7.split("#")
-  //     let rsi30 = d.rsi30.split("#")
-  //     let rsi70 = d.rsi70.split("#")
-  //     let vwap = d.vwap.split("#")
-  //     // suddenpt7.forEach(element => {
-  //     //   setpt7([
-  //     //     pt7.push(element)
-  //     //   ]);
-  //     // });   
-  //     setpt7(suddenpt7)
-  //   })
-
-
+  {
+    let za = fetch("http://kumrawatyogesh.pythonanywhere.com/getsuddenpt7")
+    za.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setpt7(varia)
+      })
+    let zb = fetch("http://kumrawatyogesh.pythonanywhere.com/getsudden2per")
+    zb.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setper2(varia)
+      })
+    let zc = fetch("http://kumrawatyogesh.pythonanywhere.com/getvwap")
+    zc.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setvwap(varia)
+      })
+    let zd = fetch("http://kumrawatyogesh.pythonanywhere.com/getrsi30")
+    zd.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setrsi30(varia)
+      })
+    let ze = fetch("http://kumrawatyogesh.pythonanywhere.com/getrsi70")
+    ze.then(res =>
+      res.json()).then(d => {
+        let varia = d.split("#")
+        varia.shift()
+        varia.sort()
+        setrsi70(varia)
+      })
+  }
 
   return (
     <div className="container-fluid">
@@ -101,32 +137,31 @@ export default function Mainbody() {
         <div className="resultList">
           <ul class="list-group">
             <span>Sudden Change</span>
-            {pt7.map((artist, index) => (
-              // <li >{artist}</li>
+            {pt7.map((artist) => (
               <li class="list-group-item">{artist}</li>
             ))}
           </ul>
         </div>
         <div className="resultList">
           <ul class="list-group">
-            {pt7.map(artist => (
-              // <li >{artist}</li>
+            <span>Sudden Change</span>
+            {per2.map((artist) => (
               <li class="list-group-item">{artist}</li>
             ))}
           </ul>
         </div>
         <div className="resultList">
           <ul class="list-group">
-            {pt7.map(artist => (
-              // <li >{artist}</li>
+            <span>Sudden Change</span>
+            {vwap.map((artist) => (
               <li class="list-group-item">{artist}</li>
             ))}
           </ul>
         </div>
         <div className="resultList">
           <ul class="list-group">
-            {pt7.map(artist => (
-              // <li >{artist}</li>
+            <span>Sudden Change</span>
+            {rsi30.map((artist) => (
               <li class="list-group-item">{artist}</li>
             ))}
           </ul>
@@ -134,15 +169,57 @@ export default function Mainbody() {
         <div className="resultList">
           <ul class="list-group">
             <span>VWAP</span>
-            {pt7.map((artist, index) => (
-              // if (index == 0){
-              //   continue;
-              // }
+            {rsi70.map((artist) => (
               <li class="list-group-item">{artist}</li>
             ))}
           </ul>
         </div>
       </div>
+
+            
+      <div className="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
   )
 }
